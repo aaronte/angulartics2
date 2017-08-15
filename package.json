@@ -91,17 +91,18 @@
     "clean:install": "npm set progress=false && npm i",
     "commit": "git-cz",
     "prebuild": "npm run rimraf -- dist",
-    "build": "ngc --p tsconfig.es5.json && mv dist/index.js dist/index.es5.js && ngc --p tsconfig.es2015.json && webpack",
+    "build": "ngc --p tsconfig.es5.json && ngc --p tsconfig.es2015.json && webpack",
     "semantic-release": "semantic-release pre && npm run build && npm publish && semantic-release post"
   },
   "main": "dist/core.umd.js",
-  "module": "dist/index.es5.js",
+  "module": "dist/es5/index.js",
   "es2015": "dist/index.js",
   "typings": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/angulartics/angulartics2.git"
   },
+  "version": "v2.2.3-custom",
   "keywords": [
     "angular2",
     "ng2",
